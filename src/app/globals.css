@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+/* Design tokens from the Impostor Hunt palette. Consumed as Tailwind utilities
+   (bg-surface, text-muted, border-accent, ...). */
+@theme {
+  --color-bg: #0b0f14;
+  --color-surface: #151c24;
+  --color-accent: #7cff6b;
+  --color-accent-2: #6c8cff;
+  --color-warn: #ffb84d;
+  --color-danger: #ff4d67;
+  --color-ink: #f4f7fa;
+  --color-muted: #96a2b4;
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-ink);
+}
+
+/* Tap targets stay usable on phones without hover. */
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}

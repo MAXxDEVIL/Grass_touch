@@ -1,0 +1,39 @@
+{
+  "name": "grass-app",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node --env-file-if-exists=.env server.ts",
+    "build": "prisma generate && next build",
+    "start": "NODE_ENV=production node --env-file-if-exists=.env server.ts",
+    "check": "node scripts/check-realtime.mjs && node scripts/check-polish.mjs && node scripts/check-ranks.mjs && node scripts/check-ai.mjs && node scripts/check-pwa.mjs && node --env-file=.env scripts/check-auth.mjs && node --env-file=.env scripts/check-safety.mjs && node --env-file=.env scripts/check-match.mjs",
+    "check:prod": "pnpm build && node --env-file-if-exists=.env scripts/check-production.mjs",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "@prisma/adapter-pg": "^7.10.0",
+    "@prisma/client": "7.10.0",
+    "leaflet": "^1.9.4",
+    "next": "16.4.0",
+    "pg": "^8.23.1",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "socket.io": "^4.8.4",
+    "socket.io-client": "^4.8.4"
+  },
+  "devDependencies": {
+    "@tailwindcss/turbopack": "^4",
+    "@types/leaflet": "^1.9.22",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "dotenv": "^18.0.7",
+    "eslint": "^9",
+    "eslint-config-next": "16.4.0",
+    "prisma": "7.10.0",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  },
+  "packageManager": "pnpm@11.28.5"
+}
