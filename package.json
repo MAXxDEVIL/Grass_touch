@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "postinstall": "prisma generate",
     "dev": "node --env-file-if-exists=.env server.ts",
     "build": "prisma generate && next build",
     "start": "NODE_ENV=production node --env-file-if-exists=.env server.ts",
